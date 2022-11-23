@@ -1,0 +1,41 @@
+@import './variables';
+@import './mixins';
+
+
+.workout-card {
+    max-width: 400px;
+    height: 500px;
+    padding: 10px;
+    // @include flexCenter(column);
+    background-color: $secondary-bg-color;
+
+    .name-and-picture {
+        @include flexCenter(column);
+
+        h2 {
+            font-size: 1.3em;
+
+        }
+
+        img {
+            max-width: 300px;
+        }
+
+        
+    }
+
+    .info-container {
+        @include flexCenter(column);
+
+        .categories, .body_parts, .description {
+            @include flexCenter(column);
+            
+            margin: 20px 0px;
+
+            p, h3 {
+                margin: 0px;
+            }
+        }
+    }
+
+}

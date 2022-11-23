@@ -1,0 +1,47 @@
+@import './variables';
+@import './mixins';
+
+
+.excercise-card {
+    max-width: 200px;
+    height: 300px;
+    padding: 10px;
+    // @include flexCenter(column);
+    background-color: $secondary-bg-color;
+
+    .name-and-picture {
+        @include flexCenter(column);
+
+        h2 {
+            font-size: 1.3em;
+
+        }
+
+        img {
+            max-width: 200px;
+        }
+    }
+
+    .info-container {
+        
+
+        .body-parts {
+            display: flex;
+            flex-direction: row;
+            
+            h4 {
+                margin: 0px;
+                margin-bottom: 5px;
+            }
+
+            
+            :not(:last-child)::after {
+                content: ",\00a0" ;
+            }
+        }
+
+        span {
+            word-wrap: break-word;
+        }
+    }
+}

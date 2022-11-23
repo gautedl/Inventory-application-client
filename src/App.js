@@ -1,23 +1,23 @@
-import { useEffect, useState } from 'react';
-import './App.scss';
+import Excercises from './components/Excercises';
+import Nav from './components/Nav';
+import Workouts from './components/Workouts';
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from 'react-router-dom';
 
 function App() {
-  const [backendData, setBackendData] = useState({});
-
-  useEffect(() => {
-    fetch('/api')
-      .then((response) => response.json())
-      .then((data) => setBackendData(data));
-  });
-
   return (
-    <div className="App">
-      {typeof backendData.users === 'undefined' ? (
-        <p>Loading...</p>
-      ) : (
-        backendData.users.map((user, i) => <p key={i}>{user}</p>)
-      )}
-    </div>
+    <Router>
+      <Nav />
+      <Routes>
+        <Route path="/" element={<Navigate replace to="/excercises" />} />
+        <Route path="/excercises" element={<Excercises />} />
+        <Route path="/workouts" element={<Workouts />} />
+      </Routes>
+    </Router>
   );
 }
 
