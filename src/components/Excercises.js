@@ -23,6 +23,7 @@ const Excercises = () => {
             bodyPart={excercise['body_part']}
             description={excercise.description}
             key={excercise._id}
+            id={excercise._id}
           />
         ))
       )}

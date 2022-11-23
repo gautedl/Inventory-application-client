@@ -2,9 +2,11 @@
 @import './mixins';
 
 @import "./excercise";
+@import "./excerciseDetail";
 @import "./excercises";
 @import "./nav";
 @import "./workout";
+@import "./workoutDetail";
 @import "./workouts";
 
 body {
@@ -21,3 +23,7 @@ body {
       monospace;
   }
   
+  a {
+    text-decoration: none;
+    color: inherit;
+  }

@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import squat from '../../assets/images/squat.jpg';
 import '../../styles/general.scss';
+import { Link } from 'react-router-dom';
 
 const Workout = (props) => {
   const [uniqueBodyParts, setUniqueBodyParts] = useState([]);
@@ -29,26 +30,28 @@ const Workout = (props) => {
   }, [bodyParts]);
 
   return (
-    <div className="workout-card">
-      <div className="name-and-picture">
-        <h2>{props.title}</h2>
-        <img src={squat} alt={props.title} />
+    <Link to={`/workout/${props.id}`}>
+      <div className="workout-card">
+        <div className="name-and-picture">
+          <h2>{props.title}</h2>
+          <img src={squat} alt={props.title} />
+        </div>
+        <div className="info-container">
+          <div className="categories">
+            <h3 className="info-title">Categories</h3>
+            <p>{categories.map((category) => category).join(', ')}</p>
+          </div>
+          <div className="body_parts">
+            <h3 className="info-title">Body Parts</h3>
+            <p>{uniqueBodyParts.map((bodyPart) => bodyPart).join(', ')}</p>
+          </div>
+          <div className="description">
+            <h3 className="info-title">Description</h3>
+            <p>{props.description}</p>
+          </div>
+        </div>
       </div>
-      <div className="info-container">
-        <div className="categories">
-          <h3 className="info-title">Categories</h3>
-          <p>{categories.map((category) => category).join(', ')}</p>
-        </div>
-        <div className="body_parts">
-          <h3 className="info-title">Body Parts</h3>
-          <p>{uniqueBodyParts.map((bodyPart) => bodyPart).join(', ')}</p>
-        </div>
-        <div className="description">
-          <h3 className="info-title">Description</h3>
-          <p>{props.description}</p>
-        </div>
-      </div>
-    </div>
+    </Link>
   );
 };
 

@@ -7,6 +7,8 @@ import {
   Routes,
   Navigate,
 } from 'react-router-dom';
+import ExcerciseDetail from './components/ExcerciseDetail';
+import WorkoutDetail from './components/WorkoutDetail';
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
         <Route path="/" element={<Navigate replace to="/excercises" />} />
         <Route path="/excercises" element={<Excercises />} />
         <Route path="/workouts" element={<Workouts />} />
+        <Route path="/excercise/:id" element={<ExcerciseDetail />} />
+        <Route path="/workout/:id" element={<WorkoutDetail />} />
       </Routes>
     </Router>
   );

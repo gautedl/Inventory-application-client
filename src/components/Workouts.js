@@ -22,6 +22,7 @@ const Workouts = () => {
             title={workout.title}
             excercises={workout.excercises}
             description={workout.description}
+            id={workout._id}
           />
         ))
       )}
