@@ -3,7 +3,7 @@
 
 .workout-container {
     @include flexCenter(row);
-
+    align-items: flex-start;
     flex-wrap: wrap;
     gap: 50px;
     margin: 20px 40px;

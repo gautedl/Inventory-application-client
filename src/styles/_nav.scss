@@ -6,29 +6,24 @@
     background-color: $bg-color;
     @include flexCenter(row);
     justify-content: space-between;
-    padding: 0 5vw;
+    padding: 0 10vw;
     height: 5vh;
     position: sticky;
     top: 0px;
-
-    .route-container {
-        @include flexCenter(row);
-        gap: 2vw;
-    }
+    justify-content: flex-end;
+    
 
     h3 {
         cursor: pointer;
         margin: 0;
         transition: 0.5s ease;
+        font-size: 2em;
     }
 
-    h3:hover {
-
-    }
 
     @media (max-width: 645px) {
         h3 {
-            font-size: 1em;
+            font-size: 1.5em;
         }
 
         
@@ -36,21 +31,15 @@
 
     @media (max-width: 500px) {
         h3 {
-            font-size: .8em;
+            font-size: 1.2em;
         }
     }
 
     @media (max-width: 410px) {
         h3 {
-            font-size: .7em;
+            font-size: 1.2em;
         }
 
-        .nav-title {
-            text-indent:-9999px;
-        }
-        .nav-title:before {
-            text-indent: 0;
-        }
     
     }
 }

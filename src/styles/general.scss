@@ -8,6 +8,9 @@
 @import "./workout";
 @import "./workoutDetail";
 @import "./workouts";
+@import "./categoryDetail";
+@import "./bodyPartDetail";
+@import "./sideBar";
 
 body {
     margin: 0;
@@ -27,3 +30,8 @@ body {
     text-decoration: none;
     color: inherit;
   }
+
+.app {
+  display: grid;
+  grid-template-columns: 1fr 15fr;
+}

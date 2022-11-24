@@ -7,14 +7,6 @@ const Nav = () => {
       <Link to="/">
         <h3 className="nav-title">GYMB</h3>
       </Link>
-      <div className="route-container">
-        <Link to="/workouts">
-          <h3>Workouts</h3>
-        </Link>
-        <Link to="/excercises">
-          <h3>Excercises</h3>
-        </Link>
-      </div>
     </nav>
   );
 };

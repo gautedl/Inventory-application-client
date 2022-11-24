@@ -24,11 +24,11 @@ const WorkoutDetail = () => {
   }, [id]);
 
   return (
-    <>
+    <div className="workout-detail-container">
       {workout.length === 0 ? (
         <p>Loading...</p>
       ) : (
-        <div className="workout-detail-container">
+        <>
           <div className="title-picture">
             <h1>{workout.title}</h1>
             <img alt={workout.title} src={squat} />
@@ -39,9 +39,9 @@ const WorkoutDetail = () => {
             <h3>Description</h3>
             <p>{workout.description}</p>
           </div>
-        </div>
+        </>
       )}
-    </>
+    </div>
   );
 };
 

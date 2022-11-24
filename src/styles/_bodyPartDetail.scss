@@ -1,0 +1,18 @@
+@import './variables';
+@import './mixins';
+
+.body-part-section {
+    @include flexCenter(column);
+    justify-content: flex-start;
+    margin-top: 20px;
+
+    .excercise-section {
+        @include flexCenter(row);
+    
+        flex-wrap: wrap;
+        gap: 50px;
+        margin: 20px 40px;
+    
+        
+    }
+}

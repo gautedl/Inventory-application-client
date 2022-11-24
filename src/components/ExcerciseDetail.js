@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import squat from './../assets/images/squat.jpg';
 import '../styles/general.scss';
 
@@ -14,24 +14,30 @@ const ExcerciseDetail = () => {
       .then((data) => {
         setExcersise(data);
         setBodyParts(
-          data['body_part'].map((bodyPart) => <p>{bodyPart.name}</p>)
+          data['body_part'].map((bodyPart) => (
+            <Link to={`/body_part/${bodyPart._id}`} key={bodyPart.name}>
+              {bodyPart.name}
+            </Link>
+          ))
         );
       });
   }, [id]);
 
   return (
-    <>
+    <div className="excercise-detail-container">
       {excercise.length === 0 ? (
         <p>Loading...</p>
       ) : (
-        <div className="excercise-detail-container">
+        <>
           <div className="title-picture">
             <h1>{excercise.name}</h1>
             <img alt={excercise.name} src={squat} />
           </div>
           <div className="info-container">
             <h3>Category</h3>
-            <p>{excercise.category.name}</p>
+            <Link to={`/category/${excercise.category._id}`}>
+              {excercise.category.name}
+            </Link>
             {bodyParts.length === 0 ? (
               <></>
             ) : bodyParts.length > 1 ? (
@@ -43,9 +49,9 @@ const ExcerciseDetail = () => {
             <h4>Description</h4>
             <p>{excercise.description}</p>
           </div>
-        </div>
+        </>
       )}
-    </>
+    </div>
   );
 };
 
