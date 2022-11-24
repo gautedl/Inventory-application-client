@@ -6,9 +6,12 @@
 
     width: 170px;
     transition: width 0.3s ease-in-out;
-    height: 100vh;
+    height: 93vh;
     background-color: rgb(10,25,41);
     padding-top: 2vh;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 5vh;
 
     .menuBtn {
         align-self: center;

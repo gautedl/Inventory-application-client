@@ -1,0 +1,85 @@
+@import './variables';
+@import './mixins';
+
+.create-excercise-container {
+    @include flexCenter(column);
+    justify-content: flex-start;
+    
+    
+
+    .create-form {
+        width: 30vw;
+        
+        
+        .value-field {
+            @include flexCenter(column);
+            align-items: flex-start;
+            margin: 20px 0px;
+            gap: 10px;
+
+            label{
+                font-size: 1.3em;
+                font-weight: 600;
+            }
+
+            .input-field {
+                width: 100%;
+            }
+
+            
+        }
+
+        .value-field-category {
+            display: flex;
+            margin: 20px 0px;
+            gap: 20px;
+
+            label {
+                font-size: 1.3em;
+                font-weight: 600;
+            }
+
+            select {
+                width: 150px;
+                
+            }
+        }
+
+        .label {
+            font-size: 1.3em;
+            font-weight: 600;
+        }
+
+        .body-wrapper {
+            
+            display: flex;
+            justify-content: center;
+            
+
+            .body-parts-container {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                gap: 10px;
+                margin: 10px 0px;
+                
+                .checkbox-field {
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+
+                }
+            }
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+
+            button {
+                padding: 10px 15px;
+                font-size: 1em;
+                cursor: pointer;
+            }
+        }
+    }
+}

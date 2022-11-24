@@ -12,6 +12,8 @@ import WorkoutDetail from './components/WorkoutDetail';
 import CategoryDetail from './components/Categorydetail';
 import BodyPartDetail from './components/BodyPartDetail';
 import SideBar from './components/SideBar';
+import CreateExcercise from './components/CreateExcercise';
+import CreateWorkout from './components/CreateWorkout';
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
           <Route path="/workout/:id" element={<WorkoutDetail />} />
           <Route path="/category/:id" element={<CategoryDetail />} />
           <Route path="/body_part/:id" element={<BodyPartDetail />} />
+          <Route path="/excercise/create" element={<CreateExcercise />} />
+          <Route path="/workout/create" element={<CreateWorkout />} />
         </Routes>
       </div>
     </Router>
