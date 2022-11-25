@@ -49,6 +49,9 @@ const ExcerciseDetail = () => {
             <h4>Description</h4>
             <p>{excercise.description}</p>
           </div>
+          <div className="btn-container">
+            <Link to={`/excercise/${id}/update`}>Update Excercise</Link>
+          </div>
         </>
       )}
     </div>

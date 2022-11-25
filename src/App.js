@@ -14,6 +14,8 @@ import BodyPartDetail from './components/BodyPartDetail';
 import SideBar from './components/SideBar';
 import CreateExcercise from './components/CreateExcercise';
 import CreateWorkout from './components/CreateWorkout';
+import UpdateExcercise from './components/UpdateExcercise';
+import UpdateWorkout from './components/UpdateWorkout';
 
 function App() {
   return (
@@ -31,6 +33,8 @@ function App() {
           <Route path="/body_part/:id" element={<BodyPartDetail />} />
           <Route path="/excercise/create" element={<CreateExcercise />} />
           <Route path="/workout/create" element={<CreateWorkout />} />
+          <Route path="/excercise/:id/update" element={<UpdateExcercise />} />
+          <Route path='/workout/:id/update' element={<UpdateWorkout />} />
         </Routes>
       </div>
     </Router>

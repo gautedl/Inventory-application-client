@@ -39,6 +39,9 @@ const WorkoutDetail = () => {
             <h3>Description</h3>
             <p>{workout.description}</p>
           </div>
+          <div className="btn-container">
+            <Link to={`/workout/${id}/update`}>Update Workout</Link>
+          </div>
         </>
       )}
     </div>
