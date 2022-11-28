@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import Excercise from './cards/Excercise';
 import '../styles/general.scss';
-import { Link } from 'react-router-dom';
 
 const Excercises = () => {
   const [excerciseData, setExcerciseData] = useState([]);
@@ -23,6 +22,7 @@ const Excercises = () => {
             category={excercise.category}
             bodyPart={excercise['body_part']}
             description={excercise.description}
+            img={excercise['img_url']}
             key={excercise._id}
             id={excercise._id}
           />

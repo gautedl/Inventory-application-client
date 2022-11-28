@@ -42,27 +42,33 @@ const SideBar = () => {
       <button className="menuBtn" onClick={toggleOpen}>
         X
       </button>
-      <div>
-        <Link className="sideitem" to="/excercises">
-          {/* <img src="" alt="" /> */}
-          <p className={open ? 'linkText' : 'linkTextClosed'}>Excercises</p>
+      <div className="links">
+        <div>
+          <Link className="sideitem" to="/excercises">
+            {/* <img src="" alt="" /> */}
+            <p className={open ? 'linkText' : 'linkTextClosed'}>Excercises</p>
+          </Link>
+          <Link className="sideitem" to="/workouts">
+            {/* <img src="" alt="" /> */}
+            <p className={open ? 'linkText' : 'linkTextClosed'}>Workouts</p>
+          </Link>
+          <div className="sideitem">
+            <p className={open ? 'linkText' : 'linkTextClosed'}>Categories:</p>
+          </div>
+          <div className={open ? 'categories' : 'categoriesClosed'}>
+            {categories}
+          </div>
+          <div className="sideitem">
+            <p className={open ? 'linkText' : 'linkTextClosed'}>Body Parts:</p>
+          </div>
+          <div className={open ? 'categories' : 'categoriesClosed'}>
+            {bodyParts}
+          </div>
+        </div>
+        <Link className="sideitem">
+          {' '}
+          <p className={open ? 'linkText' : 'linkTextClosed'}>Log in</p>
         </Link>
-        <Link className="sideitem" to="/workouts">
-          {/* <img src="" alt="" /> */}
-          <p className={open ? 'linkText' : 'linkTextClosed'}>Workouts</p>
-        </Link>
-        <div className="sideitem">
-          <p className={open ? 'linkText' : 'linkTextClosed'}>Categories:</p>
-        </div>
-        <div className={open ? 'categories' : 'categoriesClosed'}>
-          {categories}
-        </div>
-        <div className="sideitem">
-          <p className={open ? 'linkText' : 'linkTextClosed'}>Body Parts:</p>
-        </div>
-        <div className={open ? 'categories' : 'categoriesClosed'}>
-          {bodyParts}
-        </div>
       </div>
     </div>
   );

@@ -20,6 +20,7 @@ const CategoryDetail = () => {
               category={excercise.category}
               bodyPart={excercise['body_part']}
               description={excercise.description}
+              img={excercise['img_url']}
               key={excercise._id}
               id={excercise._id}
             />

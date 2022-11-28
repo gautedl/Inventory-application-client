@@ -34,7 +34,11 @@ const Workout = (props) => {
       <div className="workout-card">
         <div className="name-and-picture">
           <h2>{props.title}</h2>
-          <img src={squat} alt={props.title} />
+          {props.img === undefined ? (
+            <img src={squat} alt={props.title} />
+          ) : (
+            <img src={props.img} alt={props.title} />
+          )}
         </div>
         <div className="info-container">
           <div className="categories">

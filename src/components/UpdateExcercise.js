@@ -12,6 +12,8 @@ const UpdateExcercise = () => {
   const [selectedName, setSelectedName] = useState('');
   const [selectedCategory, setSelectedCategory] = useState();
   const [selectedDescription, setSelectedDescription] = useState('');
+  const [selectedPassword, setSelectedPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const [checked, setChecked] = useState(true);
 
@@ -57,6 +59,7 @@ const UpdateExcercise = () => {
       category: selectedCategory,
       description: selectedDescription,
       body_part: currentBodyParts,
+      password: selectedPassword,
     };
 
     fetch(`/catalog/excercise/${id}/update`, {
@@ -64,12 +67,14 @@ const UpdateExcercise = () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(updatedExcercise),
     })
-      .then((res) => {
-        return res.json();
-      })
-      .then((newExcercise) => {
-        console.log(newExcercise);
-        navigate(`/excercise/${id}`);
+      .then((res) => res.json())
+      .then((data) => {
+        if (data === 'Wrong Password') {
+          setErrorMessage(<p className="error">Wrong password</p>);
+          return;
+        } else {
+          navigate(`/excercise/${id}`);
+        }
       });
   };
 
@@ -83,7 +88,7 @@ const UpdateExcercise = () => {
       ) : (
         <>
           <h1>Update Excercise:</h1>
-          <form className="create-form" onSubmit={handleSubmit}>
+          <form className="create-form">
             <div className="value-field">
               <label htmlFor="name">Name of Excercise:</label>
               <input
@@ -163,8 +168,17 @@ const UpdateExcercise = () => {
                 }}
               />
             </div>
+            <div className="password-field">
+              <input
+                className="password"
+                placeholder="Password"
+                type="password"
+                onChange={(e) => setSelectedPassword(e.target.value)}
+              />
+            </div>
+            <div className="password-field">{errorMessage}</div>
             <div className="btn-container">
-              <button>Update Excercise</button>
+              <button onClick={handleSubmit}>Update Excercise</button>
             </div>
           </form>
         </>

@@ -81,5 +81,15 @@
                 cursor: pointer;
             }
         }
+
+        .password-field {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .error {
+            color: red;
+        }
     }
 }

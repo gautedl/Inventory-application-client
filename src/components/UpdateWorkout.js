@@ -8,6 +8,8 @@ const UpdateWorkout = () => {
   const [selectedDescription, setSelectedDescription] = useState('');
   const [excercises, setExcercises] = useState([]);
   const [selectedTitle, setSelectedTitle] = useState();
+  const [selectedPassword, setSelectedPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const navigate = useNavigate();
 
@@ -45,6 +47,7 @@ const UpdateWorkout = () => {
       title: selectedTitle,
       excercises: currentExcercises,
       description: selectedDescription,
+      password: selectedPassword,
     };
 
     fetch(`/catalog/workout/${id}/update`, {
@@ -53,9 +56,13 @@ const UpdateWorkout = () => {
       body: JSON.stringify(updatedWorkout),
     })
       .then((res) => res.json())
-      .then((newWorkout) => {
-        console.log(newWorkout);
-        navigate(`/workout/${id}`);
+      .then((data) => {
+        if (data === 'Wrong Password') {
+          setErrorMessage(<p className="error">Wrong password</p>);
+          return;
+        } else {
+          navigate(`/workout/${id}`);
+        }
       });
   };
 
@@ -66,7 +73,7 @@ const UpdateWorkout = () => {
       ) : (
         <>
           <h1>Create New Workout:</h1>
-          <form className="create-form" onSubmit={handleSubmit}>
+          <form className="create-form">
             <div className="value-field">
               <label htmlFor="title">Title of Workout:</label>
               <input
@@ -128,8 +135,17 @@ const UpdateWorkout = () => {
                 }}
               />
             </div>
+            <div className="password-field">
+              <input
+                className="password"
+                placeholder="Password"
+                type="password"
+                onChange={(e) => setSelectedPassword(e.target.value)}
+              />
+            </div>
+            <div className="password-field">{errorMessage}</div>
             <div className="btn-container">
-              <button>Update Workout</button>
+              <button onClick={handleSubmit}>Update Workout</button>
             </div>
           </form>
         </>

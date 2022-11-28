@@ -8,6 +8,8 @@
     padding: 10px;
     // @include flexCenter(column);
     background-color: $secondary-bg-color;
+    text-overflow: ellipsis; 
+    overflow: hidden; 
 
     .name-and-picture {
         @include flexCenter(column);

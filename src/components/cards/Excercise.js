@@ -8,7 +8,11 @@ const Excercise = (props) => {
       <div className="excercise-card">
         <div className="name-and-picture">
           <h2>{props.name}</h2>
-          <img src={squat} alt={props.name} />
+          {props.img === '' ? (
+            <img src={squat} alt={props.name} />
+          ) : (
+            <img src={props.img} alt={props.name} />
+          )}
         </div>
         <div className="info-container">
           <h3>{props.category.name}</h3>

@@ -7,6 +7,7 @@ const CreateExcercise = () => {
   const [bodyParts, setBodyParts] = useState();
 
   const [selectedName, setSelectedName] = useState('');
+  const [selectedUrl, setSelectedUrl] = useState('');
   const [selectedCategory, setSelectedCategory] = useState();
   const [selectedDescription, setSelectedDescription] = useState('');
   const [selectedBodyParts, setSelectedBodyParts] = useState([]);
@@ -60,6 +61,7 @@ const CreateExcercise = () => {
       category: selectedCategory,
       description: selectedDescription,
       body_part: selectedBodyParts,
+      img_url: selectedUrl,
     };
 
     fetch('/catalog/excercise/create', {
@@ -96,6 +98,19 @@ const CreateExcercise = () => {
                   setSelectedName(e.target.value);
                 }}
                 required
+              />
+            </div>
+            <div className="value-field">
+              <label htmlFor="img">URL to Image:</label>
+              <input
+                className="input-field"
+                type="text"
+                name="img"
+                id="img"
+                placeholder="Url to Image"
+                onChange={(e) => {
+                  setSelectedUrl(e.target.value);
+                }}
               />
             </div>
             <div className="value-field-category">

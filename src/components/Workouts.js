@@ -22,6 +22,7 @@ const Workouts = () => {
             title={workout.title}
             excercises={workout.excercises}
             description={workout.description}
+            img={workout['img_url']}
             id={workout._id}
           />
         ))

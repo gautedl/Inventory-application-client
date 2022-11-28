@@ -6,6 +6,7 @@ const CreateWorkout = () => {
   const [excercises, setExcercises] = useState();
 
   const [selectedDescription, setSelectedDescription] = useState('');
+  const [selectedUrl, setSelectedUrl] = useState('');
   const [selectedTitle, setSelectedTitle] = useState('');
   const [selectedExcercises, setSelectedExcercises] = useState([]);
 
@@ -50,6 +51,7 @@ const CreateWorkout = () => {
       title: selectedTitle,
       excercises: selectedExcercises,
       description: selectedDescription,
+      img_url: selectedUrl,
     };
 
     fetch('/catalog/workout/create', {
@@ -80,6 +82,20 @@ const CreateWorkout = () => {
             placeholder="Title of Workout"
             onChange={(e) => {
               setSelectedTitle(e.target.value);
+            }}
+            required
+          />
+        </div>
+        <div className="value-field">
+          <label htmlFor="img">URL to Image:</label>
+          <input
+            className="input-field"
+            type="text"
+            name="img"
+            id="img"
+            placeholder="Url to Image"
+            onChange={(e) => {
+              setSelectedUrl(e.target.value);
             }}
             required
           />

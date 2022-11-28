@@ -4,13 +4,15 @@
 .workout-detail-container {
     @include flexCenter(column);
     background-color: $secondary-bg-color;
-    height: 95vh;
+    
     margin: 0px 100px;
 
     .title-picture {
         @include flexCenter(column);
         img {
-            max-width: 800px;
+            width: 700px;
+            height: 450px;
+            object-fit: cover;
         }
 
         h1 {
@@ -26,5 +28,30 @@
                 content: ",\00a0" ;
             }
         }
+    }
+
+    .btn-container {
+        display: flex;
+        gap: 20px;
+        font-size: 18px;
+        
+        a {
+            color: $secondary-text-color;
+            font-weight: 600;
+        }
+
+        button {
+            background: none;
+            border: none;
+            font-family: inherit;
+            font-weight: 600;
+            font-size: 18px !important;
+            color: $fourth-text-color;
+            cursor: pointer;
+        }
+    }
+
+    .error {
+        color: red;
     }
 }
