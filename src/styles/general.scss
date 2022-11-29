@@ -37,3 +37,11 @@ body {
   display: grid;
   grid-template-columns: 1fr 15fr;
 }
+
+html{
+  margin:0;
+  padding:0;
+  max-height:100vh;
+
+}
+

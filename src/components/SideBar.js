@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/general.scss';
+import openArrow from '../assets/images/arrow-right.svg';
+import close from '../assets/images/x.svg';
 
 const SideBar = () => {
   const [open, setOpen] = useState(false);
@@ -40,7 +42,11 @@ const SideBar = () => {
   return (
     <div className={open ? 'sidenav' : 'sidenavClosed'}>
       <button className="menuBtn" onClick={toggleOpen}>
-        X
+        {open ? (
+          <img src={close} alt="Open Sidebar" />
+        ) : (
+          <img src={openArrow} alt="Close Sidebar" />
+        )}
       </button>
       <div className="links">
         <div>
@@ -65,10 +71,6 @@ const SideBar = () => {
             {bodyParts}
           </div>
         </div>
-        <Link className="sideitem">
-          {' '}
-          <p className={open ? 'linkText' : 'linkTextClosed'}>Log in</p>
-        </Link>
       </div>
     </div>
   );
